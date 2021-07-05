@@ -2,11 +2,23 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import Search from '../../components/Search';
+import Nav from './Nav';
+
+const HeaderWrap = styled.header`
+    border-bottom: 1px solid #eee;
+`;
 
 const HeaderBlock = styled.div`
     display: flex;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
+`;
+
+const Title = styled.h1`
+    width: 10rem;
+    background: url('/images/logo_toonmoa.png') no-repeat center center;
+    background-size: contain;
+    text-indent: -9999px;
 `;
 
 const HeaderSearch = styled(Search)`
@@ -52,9 +64,13 @@ function Header() {
     };
 
     return (
-        <header>
+        <HeaderWrap>
             <Container>
                 <HeaderBlock>
+                    <Title>
+                        툰모아
+                    </Title>
+                    <Nav />
                     <HeaderSearch
                         placehoder='웹툰 제목 / 작가 / 사이트 검색'
                         submitText='검색'
@@ -64,7 +80,7 @@ function Header() {
                     ></HeaderSearch>
                 </HeaderBlock>
             </Container>
-        </header>
+        </HeaderWrap>
     );
 }
 
