@@ -5,8 +5,8 @@ import Search from '../../components/Search';
 
 const HeaderBlock = styled.div`
     display: flex;
-
     width: 100%;
+    padding: 1rem 0;
 `;
 
 const HeaderSearch = styled(Search)`
