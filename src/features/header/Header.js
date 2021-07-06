@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import Search from '../../components/Search';
@@ -10,15 +11,49 @@ const HeaderWrap = styled.header`
 
 const HeaderBlock = styled.div`
     display: flex;
+    align-items: center;
     width: 100%;
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
 `;
 
 const Title = styled.h1`
     width: 10rem;
+    height: 3rem;
     background: url('/images/logo_toonmoa.png') no-repeat center center;
     background-size: contain;
     text-indent: -9999px;
+    margin-right: 5rem;
+`;
+
+const UserAuth = styled.div`
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+
+    a {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    a + a {
+        position: relative;
+        margin-left: 1rem;
+    }
+    a + a::before {
+        content: '';
+        position: absolute;
+        left: -0.5rem;
+        bottom: 0;
+        display: block;
+        background: #222;
+        width: 1px;
+        height: 100%;
+    }
+
+    @media ${({ theme }) => theme.tablet} {
+        margin-right: 1rem;
+    }
 `;
 
 const HeaderSearch = styled(Search)`
@@ -50,6 +85,24 @@ const HeaderSearch = styled(Search)`
         background: url('/images/icon_search.png') no-repeat center center;
         background-size: contain;
     }
+
+    @media ${({ theme }) => theme.tablet} {
+        display: none;
+    }
+`;
+
+const MenuButton = styled.button`
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    background: url('/images/icon_menu.png') no-repeat center center;
+    background-size: contain;
+
+    @media ${({ theme }) => theme.tablet} {
+        display: block;
+    }
 `;
 
 function Header() {
@@ -67,10 +120,16 @@ function Header() {
         <HeaderWrap>
             <Container>
                 <HeaderBlock>
-                    <Title>
-                        툰모아
-                    </Title>
+                    <Link to="/">
+                        <Title>
+                            툰모아
+                        </Title>
+                    </Link>
                     <Nav />
+                    <UserAuth>
+                        <Link to="login">로그인</Link>
+                        <Link to="join">회원가입</Link>
+                    </UserAuth>
                     <HeaderSearch
                         placehoder='웹툰 제목 / 작가 / 사이트 검색'
                         submitText='검색'
@@ -78,6 +137,7 @@ function Header() {
                         onChange={onChangeSearch}
                         value={searchInput}
                     ></HeaderSearch>
+                    <MenuButton />
                 </HeaderBlock>
             </Container>
         </HeaderWrap>

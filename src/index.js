@@ -15,7 +15,7 @@ const viewportSize = {
 
 const theme = {
   mobile: `(max-width: ${viewportSize.mobile})`,
-  table: `(max-width: ${viewportSize.table})`,
+  tablet: `(max-width: ${viewportSize.tablet})`,
   laptop: `(max-width: ${viewportSize.laptop})`,
 }
 
