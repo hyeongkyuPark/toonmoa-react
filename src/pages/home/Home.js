@@ -1,17 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Test = styled.div`
-    div {
-        font-size: 5rem;
-    }
-`
+import MainBannerContainer from '../../features/mainBanner/MainBannerContainer';
 
 function Home() {
     return (
-        <Test>
-            
-        </Test>
+        <div>
+            <MainBannerContainer />
+        </div>
     );
 };
 
