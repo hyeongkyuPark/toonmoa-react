@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import Container from '../../components/Container';
 import Search from '../../components/Search';
 import Nav from './Nav';
+import useScroll from './useScroll';
+
+const headerFixed = keyframes`
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0px);
+    }
+`
 
 const HeaderWrap = styled.header`
+    width: 100%;
     border-bottom: 1px solid #eee;
+    background: #fff;
+
+    ${({ isFixed }) => isFixed && css`
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        animation: ${headerFixed} 0.5s;
+    `}
 `;
 
 const HeaderBlock = styled.div`
@@ -107,6 +127,14 @@ const MenuButton = styled.button`
 
 function Header() {
     const [searchInput, setSearchInput] = useState('');
+    const [headerElem, setHeaderElem] = useState(null);
+    const headerElemRef = useCallback(node => {
+        if (node !== null) {
+            setHeaderElem(node);
+        }
+    });
+    const isFixed = useScroll(headerElem);
+
 
     const onSubmitSearch = (e) => {
         e.preventDefault();
@@ -117,7 +145,7 @@ function Header() {
     };
 
     return (
-        <HeaderWrap>
+        <HeaderWrap isFixed={isFixed} ref={headerElemRef}>
             <Container>
                 <HeaderBlock>
                     <Link to="/">
