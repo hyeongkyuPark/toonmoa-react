@@ -28,7 +28,7 @@ const NavBlock = styled.nav`
     }
 `;
 
-function Nav({ location }) {
+function MainNav({ location }) {
     return (
         <NavBlock pathname={location.pathname}>
             <ul>
@@ -42,4 +42,4 @@ function Nav({ location }) {
     )
 };
 
-export default withRouter(Nav);
+export default withRouter(MainNav);

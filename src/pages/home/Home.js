@@ -10,42 +10,7 @@ const Test = styled.div`
 function Home() {
     return (
         <Test>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
-            <div>scrollTest</div>
+            
         </Test>
     );
 };
