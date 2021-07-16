@@ -24,6 +24,9 @@ const ButtonBlock = styled.button`
                 `;
         }
     }}
+    &:not(:last-child) {
+        margin-right: 1rem;
+    }
     box-sizing: border-box;
 `;
 

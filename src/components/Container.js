@@ -14,8 +14,8 @@ const ContainerBlock = styled.div`
     }
 `;
 
-function Container({ children }) {
-    return <ContainerBlock>{children}</ContainerBlock>
+function Container({ children, ...rest }) {
+    return <ContainerBlock {...rest}>{children}</ContainerBlock>
 }
 
 export default Container;

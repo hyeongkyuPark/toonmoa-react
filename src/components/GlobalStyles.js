@@ -18,8 +18,9 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body, div, span, h1, h2, h3, h4, h5, h6,
-    p, pre, a, li, label, input {
+    p, pre, a, li, label, input, button {
         font-size: 0.85rem;
+        font-family: 'Noto Sans KR', sans-serif;
     }
 
     * {

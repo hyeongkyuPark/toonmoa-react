@@ -26,6 +26,7 @@ const HeaderWrap = styled.header`
         left: 0;
         right: 0;
         animation: ${headerFixed} 0.5s;
+        z-index: 9999;
     `}
 `;
 
