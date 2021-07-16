@@ -1,10 +1,14 @@
 import React from 'react';
-import MainBannerContainer from '../../features/mainBanner/MainBannerContainer';
+import InfoSectionContainer from '../../modules/infoSection/InfoSectionContainer';
+import MainBannerContainer from '../../modules/mainBanner/MainBannerContainer';
+import ToonmoaAdd from '../../modules/toonmoaAdd/ToonmoaAdd';
 
 function Home() {
     return (
         <div>
             <MainBannerContainer />
+            <InfoSectionContainer />
+            <ToonmoaAdd />
         </div>
     );
 };

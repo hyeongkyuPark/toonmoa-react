@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MainHeaderContainer from './features/mainHeader/MainHeaderContainer';
+import MainHeaderContainer from './modules/mainHeader/MainHeaderContainer';
 import NotFoundPage from './pages/404/NotFoundPage';
 import Home from './pages/home/Home';
 import MyStore from './pages/myStore/MyStore';

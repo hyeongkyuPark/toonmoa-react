@@ -37,7 +37,7 @@ const BannerItem = styled.li`
     flex: 0 0 auto;
     width: 100%;
     height: 100%;
-    ${({imageUrl}) => css`
+    ${({ imageUrl }) => css`
         background: url("${imageUrl}");
     `}
     background-repeat: no-repeat;

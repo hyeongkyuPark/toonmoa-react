@@ -25,16 +25,16 @@ function MainBannerContainer() {
 
     const getSliderMaxMin = () => {
         return {
-            max: -((bannerList.length-1) * 100),
+            max: -((bannerList.length - 1) * 100),
             min: 0
         };
     }
 
     const slideLeft = () => {
-        const {max, min} = getSliderMaxMin();
+        const { max, min } = getSliderMaxMin();
         let moveX = slideX;
-        
-        if(moveX + 100 > min) {
+
+        if (moveX + 100 > min) {
             moveX = max;
         } else {
             moveX += 100;
@@ -43,10 +43,10 @@ function MainBannerContainer() {
         setSlideX(moveX);
     }
     const slideRight = () => {
-        const {max, min} = getSliderMaxMin();
+        const { max, min } = getSliderMaxMin();
         let moveX = slideX;
 
-        if(moveX - 100 < max) {
+        if (moveX - 100 < max) {
             moveX = min;
         } else {
             moveX -= 100;
@@ -56,10 +56,11 @@ function MainBannerContainer() {
     }
 
     useEffect(() => {
+        if (bannerList.length !== 0) return;
         setTimeout(() => {
-            setBannerList(bannerData);
+            setBannerList(bannerList => bannerList.concat(bannerData));
         }, 2000);
-    }, [])
+    }, [bannerList])
 
     return <MainBanner bannerList={bannerList} slideLeft={slideLeft} slideRight={slideRight} slideX={slideX} />
 };
