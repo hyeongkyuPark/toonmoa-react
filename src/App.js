@@ -7,6 +7,7 @@ import MyStore from './pages/myStore/MyStore';
 import AllToon from './pages/allToon/AllToon';
 import Notice from './pages/notice/Notice';
 import MyPage from './pages/myPage/MyPage';
+import MainFooter from './modules/mainFooter/MainFooter';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/mypage' component={MyPage} />
         <Route path='/' component={NotFoundPage} />
       </Switch>
+      <MainFooter />
     </div>
   );
 }

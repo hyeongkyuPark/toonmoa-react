@@ -1,14 +1,16 @@
 import React from 'react';
 import InfoSectionContainer from '../../modules/infoSection/InfoSectionContainer';
 import MainBannerContainer from '../../modules/mainBanner/MainBannerContainer';
-import ToonmoaAdd from '../../modules/toonmoaAdd/ToonmoaAdd';
+import RecommendSectionContainer from '../../modules/RecommendSection/RecommendSectionContainer';
+import ToonmoaAddContainer from '../../modules/toonmoaAdd/ToonmoaAddContainer';
 
 function Home() {
     return (
         <div>
             <MainBannerContainer />
             <InfoSectionContainer />
-            <ToonmoaAdd />
+            <ToonmoaAddContainer />
+            <RecommendSectionContainer />
         </div>
     );
 };

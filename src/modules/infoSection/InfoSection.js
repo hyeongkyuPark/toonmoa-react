@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../../components/Container';
 import InfoItem from '../../components/InfoItem';
 import SectionTitle from '../../components/SectionTitle';
 

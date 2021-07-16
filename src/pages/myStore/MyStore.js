@@ -1,7 +1,10 @@
 import React from 'react';
+import NewToon from '../../modules/newToon/NewToon';
 
 function MyStore() {
-    return <div>MyStore</div>
+    return (
+        <NewToon />
+    );
 };
 
 export default MyStore;

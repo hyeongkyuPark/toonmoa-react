@@ -88,15 +88,15 @@ const ToonmoaAddBlock = styled.section`
     }
 `;
 
-function ToonmoaAdd() {
+function ToonmoaAdd({ moveLink }) {
     return (
         <ToonmoaAddBlock>
             <AddContainer>
                 <TextArea>
                     <h2><em>툰모아</em>에서 웹툰 효율적으로 관리하기</h2>
                     <p>여러 웹툰 사이트를 한번에 볼 수 있고, 북마크를 이용해 회차 관리까지 한번에</p>
-                    <Button buttonType='white'>웹툰 모아보기</Button>
-                    <Button>내 서제 바로가기</Button>
+                    <Button onClick={() => moveLink('/alltoon')} buttonType='white'>웹툰 모아보기</Button>
+                    <Button onClick={() => moveLink('/mystore')}>내 서제 바로가기</Button>
                 </TextArea>
                 <Image />
                 <p>
