@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecommendToon } from '../../store/webtoon/webtoon';
-import RecommendSection from './RecommendSection';
+import { getMyToon } from '../../store/webtoon/webtoon';
+import MyToon from './MyToon';
 
-function RecommendSectionContainer() {
-    const { loading, data, error } = useSelector(state => state.webtoon).recommendToon;
-    const [active, setActive] = useState('naver');
-
+function MyToonContainer() {
+    const { loading, data, error } = useSelector(state => state.webtoon).myToon;
     const dispatch = useDispatch();
+    const [active, setActive] = useState('mon');
 
     const onClickMenu = (e) => {
         if (e.target.tagName !== 'LI') return;
@@ -16,14 +15,14 @@ function RecommendSectionContainer() {
     }
 
     useEffect(() => {
-        dispatch(getRecommendToon());
+        dispatch(getMyToon());
     }, [dispatch]);
 
     if (loading) return <div>로딩중</div>
     if (error) return <div>에러발생</div>
     if (!data) return <div>웹툰 없음</div>
 
-    return <RecommendSection webtoonList={data} active={active} onClickMenu={onClickMenu} />
-}
+    return <MyToon myToon={data} onClickMenu={onClickMenu} active={active} category='day' />
+};
 
-export default RecommendSectionContainer;
+export default MyToonContainer;

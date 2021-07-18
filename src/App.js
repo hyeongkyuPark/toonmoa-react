@@ -8,11 +8,13 @@ import AllToon from './pages/allToon/AllToon';
 import Notice from './pages/notice/Notice';
 import MyPage from './pages/myPage/MyPage';
 import MainFooter from './modules/mainFooter/MainFooter';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <MainHeaderContainer />
+      <ScrollToTop />
       <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/mystore' component={MyStore} />

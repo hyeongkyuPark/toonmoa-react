@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 const Image = styled.div`
     width: 100%;
     height: 15rem;
+    background: url('${({ imageUrl }) => imageUrl}') no-repeat center center;
+    background-size: cover;
 `;
 
 const TextArea = styled.div`
@@ -17,8 +19,11 @@ const TextArea = styled.div`
     padding: 1.5rem 1rem;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.3s;
 `;
 const Info = styled.div`
+    text-align: left;
     h3 {
         font-size: 1.2rem;
         font-weight: bold;
@@ -26,6 +31,7 @@ const Info = styled.div`
     }
 `;
 const Bookmark = styled.div`
+    text-align: right;
     p {
         &:not(:last-child) {
             margin-bottom: 0.3rem;
@@ -50,6 +56,7 @@ const Logo = styled.div`
     background-size: contain;
 `;
 const Delete = styled.button`
+    cursor: pointer;
     width: 2.2rem;
     height: 2.2rem;
     background: none;
@@ -59,6 +66,8 @@ const Delete = styled.button`
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #222;
     border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
 `;
 const DeleteButton = styled.span`
     display: block;
@@ -69,45 +78,85 @@ const DeleteButton = styled.span`
 `;
 
 const ToonItemBlock = styled.li`
+    cursor: pointer;
     position: relative;
-    border: 1px solid #000;
     background: #555;
     border-radius: 10px;
     overflow: hidden;
+    &:hover {
+        ${Delete} {
+            opacity: 1;
+        }
+        ${TextArea} {
+            transform: translateY(0);
+        }
+    }
 
     ${({ toonCount }) => {
-        const width = Math.floor(100 / toonCount) - 1;
         const height = Math.floor(45 / toonCount);
 
         return css`
-            width: ${width}%;
             ${Image} {
                 height: ${height}rem;
             }
         `
     }}
+
+    ${({ toonCount }) => {
+        if (toonCount === 4) {
+            return css`
+                ${TopMenu} {
+                    top: 0.5rem;
+                    padding: 0 1rem;
+                }
+                ${Logo} {
+                    width: 4rem;
+                    height: 1.4rem;
+                }
+                ${Delete} {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+                ${TextArea} {
+                    padding: 1rem;
+                }
+                ${Info} {
+                    h3 {
+                        font-size: 1rem;
+                    }
+                }
+                ${Bookmark} {
+                    p {
+                        font-size: 0.8rem;
+                    }
+                }
+            `;
+        }
+    }}
 `;
 
-function ToonItem({ toonCount }) {
+function ToonItem({ toonCount, toon }) {
     return (
         <ToonItemBlock toonCount={toonCount}>
-            <Image />
-            <TopMenu>
-                <Logo></Logo>
-                <Delete>
-                    <DeleteButton />
-                </Delete>
-            </TopMenu>
-            <TextArea>
-                <Info>
-                    <h3>한림 체유관</h3>
-                    <p>혜성 / 이석재</p>
-                </Info>
-                <Bookmark>
-                    <p>북마크</p>
-                    <p>42회</p>
-                </Bookmark>
-            </TextArea>
+            <a href={toon.url} target="_blank" rel="noreferrer">
+                <Image imageUrl={toon.imageUrl} />
+                <TopMenu>
+                    <Logo></Logo>
+                    <Delete>
+                        <DeleteButton />
+                    </Delete>
+                </TopMenu>
+                <TextArea>
+                    <Info>
+                        <h3>{toon.title}</h3>
+                        <p>{toon.writer}</p>
+                    </Info>
+                    <Bookmark>
+                        <p>북마크</p>
+                        <p>{toon.bookmark}화</p>
+                    </Bookmark>
+                </TextArea>
+            </a>
         </ToonItemBlock>
     )
 };

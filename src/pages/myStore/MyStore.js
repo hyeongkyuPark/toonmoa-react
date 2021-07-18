@@ -1,9 +1,15 @@
 import React from 'react';
-import NewToon from '../../modules/newToon/NewToon';
+import MyToonContainer from '../../modules/myToon/MyToonContainer';
+import NewToonContainer from '../../modules/newToon/NewToonContainer';
+import ToonmoaAddContainer from '../../modules/toonmoaAdd/ToonmoaAddContainer'
 
 function MyStore() {
     return (
-        <NewToon />
+        <div>
+            <NewToonContainer />
+            <ToonmoaAddContainer />
+            <MyToonContainer />
+        </div>
     );
 };
 

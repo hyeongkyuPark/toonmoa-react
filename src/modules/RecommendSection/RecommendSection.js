@@ -37,7 +37,12 @@ function RecommendSection({ active, onClickMenu, webtoonList }) {
                     <MenuItem data-title='lezhin' isActive={active === 'lezhin'}>레진코믹스</MenuItem>
                 </MenuList>
                 <ToonList>
-                    {webtoonList.map(webtoon => <BestToonItem webtoon={webtoon}></BestToonItem>)}
+                    {
+                        webtoonList.length === 0 || webtoonList === null
+                            ? <div>웹툰 없음</div>
+                            : webtoonList.filter((webtoon) => webtoon.site === active)
+                                .map((webtoon, idx) => <BestToonItem key={idx} webtoon={webtoon}></BestToonItem>)
+                    }
                 </ToonList>
             </Container>
         </RecommendSectionBlock>
