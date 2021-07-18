@@ -59,7 +59,7 @@ function MainBannerContainer() {
         if (bannerList.length !== 0) return;
         setTimeout(() => {
             setBannerList(bannerList => bannerList.concat(bannerData));
-        }, 2000);
+        }, 0);
     }, [bannerList])
 
     return <MainBanner bannerList={bannerList} slideLeft={slideLeft} slideRight={slideRight} slideX={slideX} />

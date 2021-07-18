@@ -135,14 +135,14 @@ const ToonItemBlock = styled.li`
     }}
 `;
 
-function ToonItem({ toonCount, toon }) {
+function ToonItem({ toonCount, toon, onClickDelete }) {
     return (
         <ToonItemBlock toonCount={toonCount}>
             <a href={toon.url} target="_blank" rel="noreferrer">
                 <Image imageUrl={toon.imageUrl} />
                 <TopMenu>
                     <Logo></Logo>
-                    <Delete>
+                    <Delete onClick={() => onClickDelete(toon.id)}>
                         <DeleteButton />
                     </Delete>
                 </TopMenu>

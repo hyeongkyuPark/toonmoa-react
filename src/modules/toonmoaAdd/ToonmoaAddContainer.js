@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import ToonmoaAdd from './ToonmoaAdd';
 
 function ToonmoaAddContainer({ history }) {
-    console.log(history);
     const moveLink = (href) => {
         history.push(href);
     }

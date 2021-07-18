@@ -30,7 +30,7 @@ function NewToon({ newToon }) {
             <Container>
                 <SectionSubTitle>신규등록 웹툰</SectionSubTitle>
                 <ToonList>
-                    {newToon.map(toon => <ToonItem toon={toon} toonCount={3} />)}
+                    {newToon.map((toon, idx) => <ToonItem key={idx} toon={toon} toonCount={3} />)}
                 </ToonList>
             </Container>
         </NewToonBlock>

@@ -129,6 +129,7 @@ const recommendToon = [
 
 const myToon = [
     {
+        id: 1,
         url: 'https://comic.naver.com/webtoon/list?titleId=772243',
         imageUrl: './images/01.png',
         title: '모스크바의 여명',
@@ -138,6 +139,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 2,
         url: 'https://comic.naver.com/webtoon/list?titleId=557676',
         imageUrl: './images/02.png',
         title: '다이스(DICE)',
@@ -147,6 +149,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 3,
         url: 'https://comic.naver.com/webtoon/list?titleId=773067',
         imageUrl: './images/03.png',
         title: '제타',
@@ -156,6 +159,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 4,
         url: 'https://comic.naver.com/webtoon/list?titleId=765156',
         imageUrl: './images/04.png',
         title: '빌런투킬',
@@ -165,6 +169,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 5,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -174,6 +179,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 6,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -183,6 +189,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 7,
         url: 'https://comic.naver.com/webtoon/list?titleId=772243',
         imageUrl: './images/01.png',
         title: '모스크바의 여명',
@@ -192,6 +199,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 8,
         url: 'https://comic.naver.com/webtoon/list?titleId=557676',
         imageUrl: './images/02.png',
         title: '다이스(DICE)',
@@ -201,6 +209,7 @@ const myToon = [
         site: 'naver',
     },
     {
+        id: 9,
         url: 'https://comic.naver.com/webtoon/list?titleId=773067',
         imageUrl: './images/03.png',
         title: '제타',
@@ -210,6 +219,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 10,
         url: 'https://comic.naver.com/webtoon/list?titleId=765156',
         imageUrl: './images/04.png',
         title: '빌런투킬',
@@ -219,6 +229,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 11,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -228,6 +239,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 12,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -237,6 +249,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 13,
         url: 'https://comic.naver.com/webtoon/list?titleId=772243',
         imageUrl: './images/01.png',
         title: '모스크바의 여명',
@@ -246,6 +259,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 14,
         url: 'https://comic.naver.com/webtoon/list?titleId=557676',
         imageUrl: './images/02.png',
         title: '다이스(DICE)',
@@ -255,6 +269,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 15,
         url: 'https://comic.naver.com/webtoon/list?titleId=773067',
         imageUrl: './images/03.png',
         title: '제타',
@@ -264,6 +279,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 16,
         url: 'https://comic.naver.com/webtoon/list?titleId=765156',
         imageUrl: './images/04.png',
         title: '빌런투킬',
@@ -273,6 +289,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 17,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -282,6 +299,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 18,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -291,6 +309,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 19,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -300,6 +319,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 20,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -309,6 +329,7 @@ const myToon = [
         site: 'daum'
     },
     {
+        id: 21,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -318,6 +339,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 22,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -327,6 +349,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 23,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -336,6 +359,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 24,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -345,6 +369,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 25,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -354,6 +379,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 26,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -363,6 +389,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 27,
         url: 'https://comic.naver.com/webtoon/list?titleId=676695',
         imageUrl: './images/05.png',
         title: '제로게임',
@@ -372,6 +399,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 28,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -381,6 +409,7 @@ const myToon = [
         site: 'naver'
     },
     {
+        id: 29,
         url: 'https://comic.naver.com/webtoon/list?titleId=703846',
         imageUrl: './images/06.png',
         title: '여신강림',
@@ -397,4 +426,11 @@ export function getRecommendToon() {
 
 export function getMyToon() {
     return myToon;
+}
+
+export function removeMyToonById(id) {
+    // 삭제 로직
+    console.log('삭제', id);
+
+    return id;
 }
