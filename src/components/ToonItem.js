@@ -52,7 +52,7 @@ const TopMenu = styled.div`
 const Logo = styled.div`
     width: 5.5rem;
     height: 2.2rem;
-    background: url('./images/logo_naver.png') no-repeat center center;
+    background: url('./images/logo_${({ site }) => site}.png') no-repeat center center;
     background-size: contain;
 `;
 const Delete = styled.button`
@@ -135,28 +135,26 @@ const ToonItemBlock = styled.li`
     }}
 `;
 
-function ToonItem({ toonCount, toon, onClickDelete }) {
+function ToonItem({ toonCount, toon, onClickDelete, onClickDetail }) {
     return (
-        <ToonItemBlock toonCount={toonCount}>
-            <a href={toon.url} target="_blank" rel="noreferrer">
-                <Image imageUrl={toon.imageUrl} />
-                <TopMenu>
-                    <Logo></Logo>
-                    <Delete onClick={() => onClickDelete(toon.id)}>
-                        <DeleteButton />
-                    </Delete>
-                </TopMenu>
-                <TextArea>
-                    <Info>
-                        <h3>{toon.title}</h3>
-                        <p>{toon.writer}</p>
-                    </Info>
-                    <Bookmark>
-                        <p>북마크</p>
-                        <p>{toon.bookmark}화</p>
-                    </Bookmark>
-                </TextArea>
-            </a>
+        <ToonItemBlock toonCount={toonCount} onClick={(e) => onClickDetail(e, toon)}>
+            <Image imageUrl={toon.imageUrl} />
+            <TopMenu>
+                <Logo site={toon.site}></Logo>
+                <Delete onClick={() => onClickDelete(toon.id)}>
+                    <DeleteButton />
+                </Delete>
+            </TopMenu>
+            <TextArea>
+                <Info>
+                    <h3>{toon.title}</h3>
+                    <p>{toon.writer}</p>
+                </Info>
+                <Bookmark>
+                    <p>북마크</p>
+                    <p>{toon.bookmark}화</p>
+                </Bookmark>
+            </TextArea>
         </ToonItemBlock>
     )
 };

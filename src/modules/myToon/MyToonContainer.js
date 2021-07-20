@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMyToon, removeMyToon } from '../../store/webtoon/webtoon';
+import useDetailToon from '../../hooks/useDetailToon';
+import { detailMyToon, getMyToon, removeMyToon, oepnDetailMyToon } from '../../store/webtoon/webtoon';
 import MyToon from './MyToon';
 
 function MyToonContainer() {
     const { loading, data, error } = useSelector(state => state.webtoon).myToon;
+    const { selectToon, data: detailToonList } = useSelector(state => state.webtoon).detailMyToon;
     const dispatch = useDispatch();
     const [active, setActive] = useState('mon');
     const [category, setCategory] = useState('day');
+    const { onClickDetail, onClickDelete } = useDetailToon();
 
     const onClickMenu = (e) => {
         if (e.target.tagName !== 'LI') return;
@@ -20,10 +23,6 @@ function MyToonContainer() {
         if (e.target.dataset.title === category) return;
         setCategory(e.target.dataset.title);
         setActive(e.target.dataset.initial);
-    }
-
-    const onClickDelete = (id) => {
-        dispatch(removeMyToon(id));
     }
 
     useEffect(() => {
@@ -41,6 +40,7 @@ function MyToonContainer() {
         active={active}
         category={category}
         onClickDelete={onClickDelete}
+        onClickDetail={onClickDetail}
     />
 };
 

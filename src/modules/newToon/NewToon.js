@@ -4,6 +4,7 @@ import SectionTitle from '../../components/SectionTitle';
 import SectionSubTitle from '../../components/SectionSubTitle';
 import Container from '../../components/Container';
 import ToonItem from '../../components/ToonItem';
+import Empty from '../../components/Empty';
 
 const ToonList = styled.ul`
     display: grid;
@@ -19,18 +20,24 @@ const ToonList = styled.ul`
     }
 `;
 
+const FullColume = styled.li`
+    grid-column: 1/-1;
+`;
+
 const NewToonBlock = styled.div`
     padding: 5rem 0;
 `;
 
-function NewToon({ newToon }) {
+function NewToon({ newToon, onClickDetail, onClickDelete }) {
     return (
         <NewToonBlock>
             <SectionTitle>새로 등록한 <em>웹툰</em></SectionTitle>
             <Container>
                 <SectionSubTitle>신규등록 웹툰</SectionSubTitle>
                 <ToonList>
-                    {newToon.map((toon, idx) => <ToonItem key={idx} toon={toon} toonCount={3} />)}
+                    {newToon.length === 0
+                        ? <FullColume><Empty>등록된 웹툰이 없습니다.</Empty></FullColume>
+                        : newToon.map((toon, idx) => <ToonItem key={idx} toon={toon} toonCount={3} onClickDelete={onClickDelete} onClickDetail={onClickDetail} />)}
                 </ToonList>
             </Container>
         </NewToonBlock>

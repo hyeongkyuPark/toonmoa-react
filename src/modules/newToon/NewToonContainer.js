@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Empty from '../../components/Empty';
+import useDetailToon from '../../hooks/useDetailToon';
+import { detailMyToon, oepnDetailMyToon, removeMyToon } from '../../store/webtoon/webtoon';
 import NewToon from './NewToon';
 
 const newToon = [
@@ -26,7 +30,17 @@ const newToon = [
 ];
 
 function NewToonContainer() {
-    return <NewToon newToon={newToon} />
+    const { loading, data, error } = useSelector(state => state.webtoon).myToon;
+    const { selectToon, data: detailToonList } = useSelector(state => state.webtoon).detailMyToon;
+    const dispatch = useDispatch();
+    const { onClickDetail, onClickDelete } = useDetailToon();
+
+    if (error) return <div>에러발생</div>;
+    if (!data) return <div>등록한 웹툰이 없습니다.</div>
+
+    return loading
+        ? <div>로딩중...</div>
+        : <NewToon newToon={data.map(toon => toon).slice(0, 3)} onClickDelete={onClickDelete} onClickDetail={onClickDetail} />;
 };
 
 export default NewToonContainer;

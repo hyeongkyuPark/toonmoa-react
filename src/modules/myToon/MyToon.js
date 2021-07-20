@@ -63,7 +63,7 @@ const MyToonBlock = styled.div`
 `;
 
 
-function MyToon({ onClickMenu, active, category, onClickCategory, myToon, onClickDelete }) {
+function MyToon({ onClickMenu, active, category, onClickCategory, myToon, onClickDelete, onClickDetail }) {
     return (
         <MyToonBlock>
             <SectionTitle>웹툰 몰아보기</SectionTitle>
@@ -101,7 +101,7 @@ function MyToon({ onClickMenu, active, category, onClickCategory, myToon, onClic
                     {
                         myToon.filter(toon => toon[category] === active).length !== 0
                             ? myToon.filter(toon => toon[category] === active)
-                                .map((toon) => <ToonItem key={toon.id} toon={toon} onClickDelete={onClickDelete} />)
+                                .map((toon) => <ToonItem key={toon.id} toon={toon} onClickDelete={onClickDelete} onClickDetail={onClickDetail} />)
                             : <FullColume><Empty>등록된 웹툰이 없습니다.</Empty></FullColume>
 
                     }
